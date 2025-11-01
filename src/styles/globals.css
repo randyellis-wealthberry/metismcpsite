@@ -1,0 +1,695 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Typography Line Heights */
+  --line-height-tight: var(--leading-tight);
+  --line-height-snug: var(--leading-snug);
+  --line-height-normal: var(--leading-normal);
+  --line-height-relaxed: var(--leading-relaxed);
+  --line-height-loose: var(--leading-loose);
+
+  /* Shadows */
+  --box-shadow-sm: var(--shadow-sm);
+  --box-shadow-md: var(--shadow-md);
+  --box-shadow-lg: var(--shadow-lg);
+  --box-shadow-xl: var(--shadow-xl);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Semantic Background Colors */
+  --color-bg-page: var(--bg-page);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-interactive: var(--bg-interactive);
+  --color-bg-muted: var(--bg-muted);
+
+  /* Semantic Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-inverse: var(--text-inverse);
+
+  /* Semantic Border Colors */
+  --color-border-subtle: var(--border-subtle);
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+
+  /* Typography Scale */
+  --font-size-xs: var(--text-xs);
+  --font-size-sm: var(--text-sm);
+  --font-size-base: var(--text-base);
+  --font-size-lg: var(--text-lg);
+  --font-size-xl: var(--text-xl);
+  --font-size-2xl: var(--text-2xl);
+  --font-size-3xl: var(--text-3xl);
+  --font-size-4xl: var(--text-4xl);
+  --font-size-5xl: var(--text-5xl);
+
+  /* Shadow System */
+  --box-shadow-xs: var(--shadow-xs);
+  --box-shadow-2xl: var(--shadow-2xl);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* ========================================
+     DESIGN SYSTEM ENHANCEMENTS
+     ======================================== */
+
+  /* Typography Scale (Major Third - 1.25 ratio) */
+  --font-base: 16px;
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+
+  /* Line Heights - Optimized for readability */
+  --leading-tight: 1.25;    /* Headings */
+  --leading-snug: 1.375;    /* Subheadings */
+  --leading-normal: 1.5;    /* UI elements */
+  --leading-relaxed: 1.625; /* Body text */
+  --leading-loose: 1.75;    /* Large text */
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Neutral Color Scale (Complete HSL system) */
+  --neutral-0: hsl(0, 0%, 0%);
+  --neutral-5: hsl(0, 0%, 5%);
+  --neutral-10: hsl(0, 0%, 10%);
+  --neutral-15: hsl(0, 0%, 15%);
+  --neutral-20: hsl(0, 0%, 20%);
+  --neutral-25: hsl(0, 0%, 25%);
+  --neutral-30: hsl(0, 0%, 30%);
+  --neutral-40: hsl(0, 0%, 40%);
+  --neutral-50: hsl(0, 0%, 50%);
+  --neutral-60: hsl(0, 0%, 60%);
+  --neutral-65: hsl(0, 0%, 65%);
+  --neutral-70: hsl(0, 0%, 70%);
+  --neutral-75: hsl(0, 0%, 75%);
+  --neutral-80: hsl(0, 0%, 80%);
+  --neutral-85: hsl(0, 0%, 85%);
+  --neutral-90: hsl(0, 0%, 90%);
+  --neutral-95: hsl(0, 0%, 95%);
+  --neutral-98: hsl(0, 0%, 98%);
+  --neutral-100: hsl(0, 0%, 100%);
+
+  /* Brand Colors (HSL for theme flexibility) */
+  --brand-hue: 220;
+  --brand-sat: 80%;
+  --brand-primary: hsl(var(--brand-hue), var(--brand-sat), 50%);
+  --brand-light: hsl(var(--brand-hue), var(--brand-sat), 60%);
+  --brand-lighter: hsl(var(--brand-hue), var(--brand-sat), 70%);
+  --brand-dark: hsl(var(--brand-hue), var(--brand-sat), 40%);
+
+  /* Semantic Backgrounds (Light Mode) */
+  --bg-page: var(--neutral-98);
+  --bg-surface: var(--neutral-100);
+  --bg-elevated: var(--neutral-100);
+  --bg-interactive: var(--neutral-95);
+  --bg-muted: var(--neutral-95);
+
+  /* Text Color Hierarchy (Light Mode - Optimized for readability) */
+  --text-primary: var(--neutral-10);      /* 90% contrast - headings */
+  --text-body: var(--neutral-30);         /* 70% contrast - body text */
+  --text-secondary: var(--neutral-50);    /* 50% contrast - supporting */
+  --text-tertiary: var(--neutral-65);     /* 35% contrast - captions */
+  --text-disabled: var(--neutral-75);     /* 25% contrast - disabled */
+  --text-inverse: var(--neutral-100);     /* For dark backgrounds */
+
+  /* Border Colors (Light Mode) */
+  --border-subtle: var(--neutral-90);
+  --border-default: var(--neutral-85);
+  --border-strong: var(--neutral-70);
+
+  /* Dual Shadow System (Enhanced depth) */
+  --shadow-xs: 0 -1px 1px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 -1px 2px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 -1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 -2px 4px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.18);
+  --shadow-xl: 0 -4px 8px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 -8px 16px rgba(0, 0, 0, 0.12), 0 24px 48px rgba(0, 0, 0, 0.25);
+
+  /* Border Radius Scale */
+  --radius-2xs: 0.25rem;  /* 4px */
+  --radius-xs: 0.375rem;  /* 6px */
+  --radius-sm: 0.5rem;    /* 8px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.25rem;   /* 20px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-3xl: 2rem;     /* 32px */
+  --radius-full: 9999px;  /* pill shape */
+
+  /* Brand Color Semantic Aliases - Easy to update across entire site */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-light: var(--brand-light);
+  --color-brand-lighter: var(--brand-lighter);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-gradient-start: hsl(220, 80%, 50%);
+  --color-brand-gradient-mid: hsl(180, 80%, 50%);
+  --color-brand-gradient-end: hsl(220, 80%, 50%);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+
+  /* ========================================
+     DESIGN SYSTEM ENHANCEMENTS (DARK MODE)
+     ======================================== */
+
+  /* Brand Colors (Adjusted for dark mode) */
+  --brand-primary: hsl(var(--brand-hue), calc(var(--brand-sat) - 10%), 55%);
+  --brand-light: hsl(var(--brand-hue), calc(var(--brand-sat) - 10%), 65%);
+
+  /* Semantic Backgrounds (Dark Mode - inverted hierarchy) */
+  --bg-page: var(--neutral-0);
+  --bg-surface: var(--neutral-5);
+  --bg-elevated: var(--neutral-10);
+  --bg-interactive: var(--neutral-15);
+  --bg-muted: var(--neutral-5);
+
+  /* Text Color Hierarchy (Dark Mode - flipped with 100-lightness rule) */
+  --text-primary: var(--neutral-90);      /* 100 - 10 = 90 */
+  --text-body: var(--neutral-70);         /* 100 - 30 = 70 */
+  --text-secondary: var(--neutral-50);    /* Same middle value */
+  --text-tertiary: var(--neutral-40);     /* 100 - 65 = 35 (adjusted to 40) */
+  --text-disabled: var(--neutral-25);     /* 100 - 75 = 25 */
+  --text-inverse: var(--neutral-10);      /* For light backgrounds */
+
+  /* Border Colors (Dark Mode - inverted) */
+  --border-subtle: var(--neutral-15);
+  --border-default: var(--neutral-20);
+  --border-strong: var(--neutral-30);
+
+  /* Dual Shadow System (Dark Mode - deeper, more pronounced) */
+  --shadow-xs: 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 -1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 -1px 3px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 -2px 4px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 -4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 -8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* ========================================
+     GLASSMORPHISM EFFECTS
+     ======================================== */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  /* ========================================
+     ANIMATED GRADIENTS
+     ======================================== */
+  .gradient-animated {
+    background: linear-gradient(
+      -45deg,
+      hsl(217, 91%, 60%),
+      hsl(189, 94%, 43%),
+      hsl(217, 91%, 70%),
+      hsl(189, 94%, 53%)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  .gradient-subtle {
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.05) 0%,
+      rgba(147, 197, 253, 0.05) 50%,
+      rgba(59, 130, 246, 0.05) 100%
+    );
+  }
+
+  /* ========================================
+     DEPTH ENHANCEMENT UTILITIES
+     ======================================== */
+
+  /* Top border highlights for depth */
+  .border-highlight {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Depth gradient overlays */
+  .depth-gradient-light {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+  }
+
+  .depth-gradient-dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      transparent
+    );
+  }
+
+  /* Elevated card effect */
+  .elevated-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* Interactive highlight */
+  .interactive-highlight {
+    background: var(--bg-interactive);
+    transition: all 0.2s ease;
+  }
+
+  .interactive-highlight:hover {
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  /* ========================================
+     DEPTH ENHANCEMENT UTILITIES
+     ======================================== */
+  /* Depth utilities implementing dual-shadow system and color layering */
+  .depth-surface {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .depth-elevated {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-xl);
+    /* Subtle top highlight for light reflection */
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .depth-interactive {
+    background: var(--bg-interactive);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.2s ease;
+  }
+
+  .depth-interactive:hover {
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+
+  /* ========================================
+     GLOW EFFECTS
+     ======================================== */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3),
+                0 0 40px rgba(59, 130, 246, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3),
+                0 0 40px rgba(34, 211, 238, 0.1);
+  }
+
+  .glow-subtle {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+  }
+
+  /* ========================================
+     SCROLL & INTERACTION
+     ======================================== */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* ========================================
+     TYPOGRAPHY UTILITIES
+     ======================================== */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Typography Hierarchy Classes - Size × Weight × Color = Emphasis */
+  .heading-1 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    line-height: var(--leading-tight);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .heading-2 {
+    font-size: clamp(2rem, 4vw, 2.25rem);
+    line-height: var(--leading-tight);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .heading-3 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    line-height: var(--leading-snug);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+  }
+
+  .heading-4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: var(--leading-snug);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+  }
+
+  .heading-5 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+  }
+
+  .body-large {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    font-weight: var(--font-regular);
+    color: var(--text-body);
+  }
+
+  .body-regular {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    font-weight: var(--font-regular);
+    color: var(--text-body);
+  }
+
+  .body-small {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    font-weight: var(--font-regular);
+    color: var(--text-secondary);
+  }
+
+  .body-xs {
+    font-size: var(--text-xs);
+    line-height: var(--leading-normal);
+    font-weight: var(--font-regular);
+    color: var(--text-tertiary);
+  }
+
+  /* ========================================
+     FOCUS STATES - Keyboard Navigation
+     ======================================== */
+  /* Enhanced focus ring for accessibility */
+  .focus-ring {
+    @apply outline-none;
+    box-shadow: 0 0 0 3px var(--color-brand-primary), 0 0 0 6px rgba(59, 130, 246, 0.2);
+    border-radius: var(--radius-md);
+  }
+
+  /* Focus visible for interactive elements */
+  *:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Button focus states */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.15);
+  }
+
+  /* Card focus states */
+  [role="button"]:focus-visible,
+  .interactive-card:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 4px;
+    box-shadow: var(--shadow-xl), 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+
+  /* ========================================
+     MICRO-INTERACTIONS
+     ======================================== */
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  /* Shimmer effect for loading states */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+    background-size: 1000px 100%;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .gradient-animated {
+    animation: none;
+  }
+}

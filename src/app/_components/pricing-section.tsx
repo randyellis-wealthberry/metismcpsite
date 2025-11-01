@@ -46,7 +46,7 @@ export function PricingSection() {
                 <div className="mx-auto max-w-2xl text-center mb-16">
                     <h2 className="heading-2 text-balance">Simple, Transparent Pricing</h2>
                     <p className="body-large mt-4">
-                        Choose the plan that fits your needs. Start free, upgrade when you're ready.
+                        Choose the plan that fits your needs. Start free, upgrade when you&apos;re ready.
                     </p>
                 </div>
 

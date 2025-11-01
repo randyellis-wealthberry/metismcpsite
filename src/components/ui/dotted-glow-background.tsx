@@ -74,7 +74,7 @@ export const DottedGlowBackground = ({
     const normalized = variableName.startsWith("--")
       ? variableName
       : `--${variableName}`;
-    const fromEl = getComputedStyle(el as Element)
+    const fromEl = getComputedStyle(el)
       .getPropertyValue(normalized)
       .trim();
     if (fromEl) return fromEl;
@@ -106,13 +106,13 @@ export const DottedGlowBackground = ({
       if (isDark) {
         const varDot = resolveCssVariable(container, colorDarkVar);
         const varGlow = resolveCssVariable(container, glowColorDarkVar);
-        nextColor = varDot || darkColor || nextColor;
-        nextGlow = varGlow || darkGlowColor || nextGlow;
+        nextColor = varDot ?? darkColor ?? nextColor;
+        nextGlow = varGlow ?? darkGlowColor ?? nextGlow;
       } else {
         const varDot = resolveCssVariable(container, colorLightVar);
         const varGlow = resolveCssVariable(container, glowColorLightVar);
-        nextColor = varDot || nextColor;
-        nextGlow = varGlow || nextGlow;
+        nextColor = varDot ?? nextColor;
+        nextGlow = varGlow ?? nextGlow;
       }
 
       setResolvedColor(nextColor);
@@ -238,8 +238,8 @@ export const DottedGlowBackground = ({
       ctx.fillStyle = resolvedColor;
 
       const time = (now / 1000) * Math.max(speedScale, 0);
-      for (let i = 0; i < dots.length; i++) {
-        const d = dots[i];
+      for (const d of dots) {
+        if (!d) continue;
         // Linear triangle wave 0..1..0 for linear glow/dim
         const mod = (time * d.speed + d.phase) % 2;
         const lin = mod < 1 ? mod : 2 - mod; // 0..1..0

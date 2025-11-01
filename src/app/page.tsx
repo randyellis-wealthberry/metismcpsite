@@ -3,6 +3,7 @@ import { DottedGlowSection } from "~/app/_components/dotted-glow-section";
 import { FeaturesSection } from "~/app/_components/features-section";
 import { CodeDemoSection } from "~/app/_components/code-demo-section";
 import { HowItWorksSection } from "~/app/_components/how-it-works-section";
+import { PricingSection } from "~/app/_components/pricing-section";
 import { TestimonialsSection } from "~/app/_components/testimonials-section";
 import { FinalCTASection } from "~/app/_components/final-cta-section";
 import { FAQSection } from "~/app/_components/faq-section";
@@ -21,6 +22,7 @@ export default function Home() {
         <FeaturesSection />
         <CodeDemoSection />
         <HowItWorksSection />
+        <PricingSection />
         <TestimonialsSection />
         <FinalCTASection />
         <FAQSection />

@@ -2,7 +2,6 @@
 
 import { Clock, Zap, Settings, Shield } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const benefits = [
   {

@@ -171,7 +171,6 @@ export function MechanicalDiagram({ className }: MechanicalDiagramProps) {
           // Gear rotation animations
           gears.forEach((gear, index) => {
             const rotationSpeed = 0.5 + (index * 0.3); // RPM
-            const radiansPerSecond = (rotationSpeed * Math.PI * 2) / 60;
 
             animate(gear.rotation, {
               z: `+=${Math.PI * 2}`,

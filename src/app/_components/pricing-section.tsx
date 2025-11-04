@@ -80,29 +80,29 @@ export function PricingSection() {
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/vercel.svg"
-                                        alt="Vercel"
+                                        src="https://html.tailus.io/blocks/customers/nvidia.svg"
+                                        alt="Nvidia Logo"
                                         height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-5 w-fit dark:invert"
+                                        className="h-4 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/github.svg"
-                                        alt="GitHub"
-                                        height="20"
+                                        alt="GitHub Logo"
+                                        height="16"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-5 w-fit dark:invert"
+                                        className="h-6 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/openai.svg"
-                                        alt="OpenAI"
-                                        height="20"
+                                        alt="OpenAI Logo"
+                                        height="24"
                                         width="auto"
                                     />
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg"
-                                        alt="Claude"
+                                        src="https://html.tailus.io/blocks/customers/nike.svg"
+                                        alt="Nike Logo"
                                         height="20"
                                         width="auto"
                                     />

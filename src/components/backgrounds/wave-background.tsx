@@ -128,7 +128,6 @@ export function WaveBackground({ className = "" }: WaveBackgroundProps) {
     const updateInterval = setInterval(() => {
       // Trigger subtle re-renders based on mouse position
       if (wave1Ref.current && wave2Ref.current && wave3Ref.current) {
-        const influence = (mouseYRef.current - 0.5) * 50;
         // Adjust opacity based on mouse position for added effect
         wave1Ref.current.style.opacity = String(0.3 + mouseYRef.current * 0.1);
         wave2Ref.current.style.opacity = String(0.35 + mouseYRef.current * 0.1);

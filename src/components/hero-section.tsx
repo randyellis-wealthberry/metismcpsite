@@ -30,8 +30,7 @@ export default function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-x-hidden">
-                <section className="relative">
+            <section className="relative">
                     <div className="py-12 md:pb-32 lg:pb-36 lg:pt-32">
                         <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12 z-20">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
@@ -264,7 +263,6 @@ export default function HeroSection() {
                         </div>
                     </div>
                 </section>
-            </main>
         </>
     )
 }

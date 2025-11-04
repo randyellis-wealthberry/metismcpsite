@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Sparkles } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { WaveBackground } from "~/components/backgrounds/wave-background";
-import { DottedGlowBackground } from "~/components/ui/dotted-glow-background";
 import {
   fadeInUp,
   staggerContainer,

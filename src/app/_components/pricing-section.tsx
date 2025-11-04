@@ -79,24 +79,24 @@ export function PricingSection() {
                                 {/* Companies/Tools Logos */}
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
                                     <img
-                                        className="h-4 w-fit dark:invert"
+                                        className="h-5 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/vercel.svg"
                                         alt="Vercel"
-                                        height="16"
+                                        height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-4 w-fit dark:invert"
+                                        className="h-5 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/github.svg"
                                         alt="GitHub"
-                                        height="16"
+                                        height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-4 w-fit dark:invert"
+                                        className="h-5 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/openai.svg"
                                         alt="OpenAI"
-                                        height="16"
+                                        height="20"
                                         width="auto"
                                     />
                                     <img

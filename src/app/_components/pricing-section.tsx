@@ -6,6 +6,7 @@ export function PricingSection() {
     return (
         <div className="relative py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
+                {/* Section Header */}
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="heading-2 text-balance">
                         Professional Design Tools for Claude
@@ -14,12 +15,16 @@ export function PricingSection() {
                         Transform your UI workflow with master-level design systems. Start free, upgrade when you&apos;re ready.
                     </p>
                 </div>
+
+                {/* Pricing Card */}
                 <div className="mt-8 md:mt-20">
                     <div className="bg-card relative rounded-3xl border shadow-2xl shadow-zinc-950/5">
                         <div className="grid items-center gap-12 divide-y p-12 md:grid-cols-2 md:divide-x md:divide-y-0">
+
+                            {/* Left Column - Pricing */}
                             <div className="pb-12 text-center md:pb-0 md:pr-12">
                                 <h3 className="heading-3">Pro</h3>
-                                <p className="body-regular mt-2 text-muted-foreground">
+                                <p className="body-regular mt-2">
                                     For professionals building production UIs
                                 </p>
                                 <span className="mb-6 mt-12 inline-block text-6xl font-bold">
@@ -30,7 +35,9 @@ export function PricingSection() {
                                     <Button
                                         asChild
                                         size="lg"
-                                        className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700">
+                                        className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
+                                        style={{ boxShadow: 'var(--shadow-lg)' }}
+                                    >
                                         <Link href="#">Upgrade to Pro</Link>
                                     </Button>
                                 </div>
@@ -42,6 +49,8 @@ export function PricingSection() {
                                     * Free tier available with 50 cycles/day limit
                                 </p>
                             </div>
+
+                            {/* Right Column - Features & Logos */}
                             <div className="relative">
                                 <ul
                                     role="list"
@@ -62,9 +71,42 @@ export function PricingSection() {
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-muted-foreground mt-8 text-sm">
-                                    Works seamlessly with Claude through the Model Context Protocol. Just describe what you want in chat.
+
+                                <p className="text-muted-foreground mt-6 text-sm">
+                                    Works seamlessly with Claude through the Model Context Protocol. Trusted by developers building with:
                                 </p>
+
+                                {/* Companies/Tools Logos */}
+                                <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
+                                    <img
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://html.tailus.io/blocks/customers/vercel.svg"
+                                        alt="Vercel"
+                                        height="20"
+                                        width="auto"
+                                    />
+                                    <img
+                                        className="h-4 w-fit dark:invert"
+                                        src="https://html.tailus.io/blocks/customers/github.svg"
+                                        alt="GitHub"
+                                        height="16"
+                                        width="auto"
+                                    />
+                                    <img
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://html.tailus.io/blocks/customers/nextjs.svg"
+                                        alt="Next.js"
+                                        height="20"
+                                        width="auto"
+                                    />
+                                    <img
+                                        className="h-4 w-fit dark:invert"
+                                        src="https://html.tailus.io/blocks/customers/react.svg"
+                                        alt="React"
+                                        height="16"
+                                        width="auto"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

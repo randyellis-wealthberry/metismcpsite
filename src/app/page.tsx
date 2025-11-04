@@ -11,14 +11,14 @@ import { Footer } from "~/app/_components/footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden min-w-0">
       {/* HeroSection includes HeroHeader (navbar) and hero content with logo slider */}
       <HeroSection />
 
       {/* Dotted Glow Background Section */}
       <DottedGlowSection />
 
-      <main className="min-h-screen smooth-scroll">
+      <main className="min-h-screen smooth-scroll overflow-x-hidden">
         <FeaturesSection />
         <CodeDemoSection />
         <HowItWorksSection />
@@ -28,6 +28,6 @@ export default function Home() {
         <FAQSection />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

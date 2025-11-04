@@ -70,8 +70,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`} suppressHydrationWarning>
-      <body className="overflow-x-hidden">
+    <html lang="en" className={`${geist.variable} overflow-x-hidden`} suppressHydrationWarning>
+      <body className="overflow-x-hidden min-w-0">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

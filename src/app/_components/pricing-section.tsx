@@ -80,8 +80,8 @@ export function PricingSection() {
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/vercel.svg"
-                                        alt="Vercel"
+                                        src="https://html.tailus.io/blocks/customers/microsoft.svg"
+                                        alt="Microsoft"
                                         height="20"
                                         width="auto"
                                     />
@@ -94,15 +94,15 @@ export function PricingSection() {
                                     />
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/nextjs.svg"
-                                        alt="Next.js"
+                                        src="https://html.tailus.io/blocks/customers/google.svg"
+                                        alt="Google"
                                         height="20"
                                         width="auto"
                                     />
                                     <img
                                         className="h-4 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/react.svg"
-                                        alt="React"
+                                        src="https://html.tailus.io/blocks/customers/airbnb.svg"
+                                        alt="Airbnb"
                                         height="16"
                                         width="auto"
                                     />

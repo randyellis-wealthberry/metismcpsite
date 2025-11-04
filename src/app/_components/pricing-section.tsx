@@ -79,31 +79,31 @@ export function PricingSection() {
                                 {/* Tech Stack Logos */}
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
                                     <img
-                                        className="h-6 w-auto dark:invert"
-                                        src="https://logo.svgcdn.com/devicon/vercel-original-wordmark.svg"
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://cdn.simpleicons.org/vercel?viewbox=auto"
                                         alt="Vercel"
-                                        height="24"
+                                        height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-6 w-auto dark:invert"
-                                        src="https://logo.svgcdn.com/devicon/nextjs-original-wordmark.svg"
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://cdn.simpleicons.org/nextdotjs?viewbox=auto"
                                         alt="Next.js"
-                                        height="24"
+                                        height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-6 w-auto dark:invert"
-                                        src="https://logo.svgcdn.com/devicon/react-original-wordmark.svg"
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://cdn.simpleicons.org/react?viewbox=auto"
                                         alt="React"
-                                        height="24"
+                                        height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-6 w-auto dark:invert"
-                                        src="https://logo.svgcdn.com/devicon/github-original-wordmark.svg"
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://cdn.simpleicons.org/github?viewbox=auto"
                                         alt="GitHub"
-                                        height="24"
+                                        height="20"
                                         width="auto"
                                     />
                                 </div>

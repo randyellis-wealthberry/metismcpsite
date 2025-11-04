@@ -46,18 +46,6 @@ export const StickyScroll = ({
     "var(--bg-surface)",
   ];
 
-  const linearGradients = [
-    "linear-gradient(to bottom right, var(--color-brand-primary), var(--color-brand-light))",
-    "linear-gradient(to bottom right, var(--neutral-80), var(--neutral-90))",
-    "linear-gradient(to bottom right, var(--color-brand-primary), var(--color-brand-light))",
-  ];
-
-  const _backgroundGradient = useTransform(
-    scrollYProgress,
-    content.map((_, i) => i / content.length),
-    linearGradients
-  );
-
   return (
     <motion.div
       ref={containerRef}

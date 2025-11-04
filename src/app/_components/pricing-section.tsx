@@ -101,7 +101,7 @@ export function PricingSection() {
                                     />
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/google.svg"
+                                        src="https://static.cdnlogo.com/logos/g/98/google.svg"
                                         alt="Google"
                                         height="20"
                                         width="auto"

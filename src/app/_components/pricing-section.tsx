@@ -101,8 +101,8 @@ export function PricingSection() {
                                     />
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://static.cdnlogo.com/logos/g/98/google.svg"
-                                        alt="Google"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg"
+                                        alt="Claude"
                                         height="20"
                                         width="auto"
                                     />

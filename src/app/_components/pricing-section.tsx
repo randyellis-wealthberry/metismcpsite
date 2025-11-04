@@ -79,10 +79,10 @@ export function PricingSection() {
                                 {/* Companies/Tools Logos */}
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
                                     <img
-                                        className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/microsoft.svg"
-                                        alt="Microsoft"
-                                        height="20"
+                                        className="h-4 w-fit dark:invert"
+                                        src="https://html.tailus.io/blocks/customers/vercel.svg"
+                                        alt="Vercel"
+                                        height="16"
                                         width="auto"
                                     />
                                     <img
@@ -93,17 +93,17 @@ export function PricingSection() {
                                         width="auto"
                                     />
                                     <img
+                                        className="h-4 w-fit dark:invert"
+                                        src="https://html.tailus.io/blocks/customers/openai.svg"
+                                        alt="OpenAI"
+                                        height="16"
+                                        width="auto"
+                                    />
+                                    <img
                                         className="h-5 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/google.svg"
                                         alt="Google"
                                         height="20"
-                                        width="auto"
-                                    />
-                                    <img
-                                        className="h-4 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/airbnb.svg"
-                                        alt="Airbnb"
-                                        height="16"
                                         width="auto"
                                     />
                                 </div>

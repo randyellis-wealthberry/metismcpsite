@@ -4,18 +4,18 @@ import React from "react";
 import { StickyScroll, type StickyScrollContent } from "~/components/ui/sticky-scroll-reveal";
 import { Sun, CheckCircle } from "lucide-react";
 
-// Visual components for each tool
+// Visual components for each tool - sized for sticky container
 const TypographyVisual = () => (
-  <div className="w-full h-64 md:h-96 rounded-2xl p-8 flex flex-col justify-center items-start space-y-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-    <div className="heading-1 animate-pulse" style={{ color: 'var(--text-primary)' }}>Heading</div>
-    <div className="heading-3" style={{ color: 'var(--text-body)' }}>Subheading</div>
-    <div className="body-regular" style={{ color: 'var(--text-secondary)' }}>Body text with perfect hierarchy</div>
+  <div className="w-full h-full flex flex-col justify-center items-start space-y-3 p-6" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div className="text-3xl font-bold animate-pulse" style={{ color: 'var(--text-primary)' }}>Heading</div>
+    <div className="text-xl font-semibold" style={{ color: 'var(--text-body)' }}>Subheading</div>
+    <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>Perfect hierarchy</div>
   </div>
 );
 
 const ColorSystemVisual = () => (
-  <div className="w-full h-64 md:h-96 rounded-2xl p-8 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-    <div className="grid grid-cols-5 gap-2 w-full max-w-md">
+  <div className="w-full h-full flex items-center justify-center p-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div className="grid grid-cols-5 gap-2 w-full">
       {[
         'var(--neutral-100)',
         'var(--neutral-80)',
@@ -25,8 +25,8 @@ const ColorSystemVisual = () => (
       ].map((color, i) => (
         <div
           key={i}
-          className="aspect-square rounded-lg"
-          style={{ backgroundColor: color, boxShadow: 'var(--shadow-md)' }}
+          className="aspect-square rounded"
+          style={{ backgroundColor: color, boxShadow: 'var(--shadow-sm)' }}
         />
       ))}
     </div>
@@ -34,10 +34,10 @@ const ColorSystemVisual = () => (
 );
 
 const DepthVisual = () => (
-  <div className="w-full h-64 md:h-96 rounded-2xl p-8 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-    <div className="relative w-48 h-48">
+  <div className="w-full h-full flex items-center justify-center p-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div className="relative w-32 h-32">
       <div
-        className="absolute inset-0 rounded-xl"
+        className="absolute inset-0 rounded-lg"
         style={{
           backgroundColor: 'var(--bg-surface)',
           boxShadow: 'var(--shadow-xs)',
@@ -45,35 +45,35 @@ const DepthVisual = () => (
         }}
       />
       <div
-        className="absolute inset-0 rounded-xl"
+        className="absolute inset-0 rounded-lg"
         style={{
           backgroundColor: 'var(--bg-surface)',
           boxShadow: 'var(--shadow-lg)',
-          transform: 'translate(-8px, -8px)'
+          transform: 'translate(-6px, -6px)'
         }}
       />
       <div
-        className="absolute inset-0 rounded-xl flex items-center justify-center"
+        className="absolute inset-0 rounded-lg flex items-center justify-center text-sm font-semibold"
         style={{
           backgroundColor: 'var(--bg-surface)',
           boxShadow: 'var(--shadow-2xl)',
-          transform: 'translate(-16px, -16px)',
+          transform: 'translate(-12px, -12px)',
           color: 'var(--text-primary)'
         }}
       >
-        <span className="heading-4">Elevated</span>
+        Elevated
       </div>
     </div>
   </div>
 );
 
 const SpacingVisual = () => (
-  <div className="w-full h-64 md:h-96 rounded-2xl p-8 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-    <div className="grid grid-cols-3 gap-4 w-full max-w-md">
+  <div className="w-full h-full flex items-center justify-center p-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div className="grid grid-cols-3 gap-3 w-full">
       {[1, 2, 3, 4, 5, 6].map((i) => (
         <div
           key={i}
-          className="aspect-square rounded-lg"
+          className="aspect-square rounded"
           style={{
             backgroundColor: 'var(--bg-surface)',
             boxShadow: 'var(--shadow-md)',
@@ -86,23 +86,23 @@ const SpacingVisual = () => (
 );
 
 const ThemeVisual = () => (
-  <div className="w-full h-64 md:h-96 rounded-2xl p-8 flex items-center justify-center gap-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-    <div className="flex-1 h-32 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--neutral-100)', border: '1px solid var(--border-default)' }}>
-      <Sun className="h-8 w-8" style={{ color: 'var(--neutral-20)' }} />
+  <div className="w-full h-full flex items-center justify-center gap-3 p-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div className="flex-1 h-24 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--neutral-100)', border: '1px solid var(--border-default)' }}>
+      <Sun className="h-6 w-6" style={{ color: 'var(--neutral-20)' }} />
     </div>
-    <div className="flex-1 h-32 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--neutral-10)', border: '1px solid var(--border-default)' }}>
-      <Sun className="h-8 w-8" style={{ color: 'var(--neutral-90)' }} />
+    <div className="flex-1 h-24 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--neutral-10)', border: '1px solid var(--border-default)' }}>
+      <Sun className="h-6 w-6" style={{ color: 'var(--neutral-90)' }} />
     </div>
   </div>
 );
 
 const AccessibilityVisual = () => (
-  <div className="w-full h-64 md:h-96 rounded-2xl p-8 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-    <div className="flex flex-col items-center gap-4">
-      <CheckCircle className="h-24 w-24" style={{ color: 'var(--color-brand-primary)' }} />
+  <div className="w-full h-full flex items-center justify-center p-4" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <div className="flex flex-col items-center gap-3">
+      <CheckCircle className="h-16 w-16" style={{ color: 'var(--color-brand-primary)' }} />
       <div className="text-center">
-        <div className="heading-4" style={{ color: 'var(--text-primary)' }}>WCAG AA</div>
-        <div className="body-regular" style={{ color: 'var(--text-secondary)' }}>4.5:1 Contrast</div>
+        <div className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>WCAG AA</div>
+        <div className="text-xs" style={{ color: 'var(--text-secondary)' }}>4.5:1 Contrast</div>
       </div>
     </div>
   </div>

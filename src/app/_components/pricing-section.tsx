@@ -76,34 +76,34 @@ export function PricingSection() {
                                     Works seamlessly with Claude through the Model Context Protocol. Trusted by developers building with:
                                 </p>
 
-                                {/* Companies/Tools Logos */}
+                                {/* Tech Stack Logos */}
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/microsoft.svg"
-                                        alt="Microsoft"
+                                        src="https://cdn.simpleicons.org/vercel?viewbox=auto"
+                                        alt="Vercel"
                                         height="20"
-                                        width="auto"
-                                    />
-                                    <img
-                                        className="h-4 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/github.svg"
-                                        alt="GitHub"
-                                        height="16"
                                         width="auto"
                                     />
                                     <img
                                         className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/google.svg"
-                                        alt="Google"
+                                        src="https://cdn.simpleicons.org/nextdotjs?viewbox=auto"
+                                        alt="Next.js"
                                         height="20"
                                         width="auto"
                                     />
                                     <img
-                                        className="h-4 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/airbnb.svg"
-                                        alt="Airbnb"
-                                        height="16"
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://cdn.simpleicons.org/react?viewbox=auto"
+                                        alt="React"
+                                        height="20"
+                                        width="auto"
+                                    />
+                                    <img
+                                        className="h-5 w-fit dark:invert"
+                                        src="https://cdn.simpleicons.org/github?viewbox=auto"
+                                        alt="GitHub"
+                                        height="20"
                                         width="auto"
                                     />
                                 </div>

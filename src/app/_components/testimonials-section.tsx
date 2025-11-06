@@ -171,7 +171,7 @@ export function TestimonialsSection() {
             >
               <p className="body-regular">
                 Built an entire dashboard in one afternoon that actually looks good. Before Métis,
-                I'd spend 30 minutes picking shadow values for a single button. Now I just tell
+                I&apos;d spend 30 minutes picking shadow values for a single button. Now I just tell
                 Claude &quot;add depth to this&quot; and ship. Our designer stopped sending revision notes.
               </p>
 

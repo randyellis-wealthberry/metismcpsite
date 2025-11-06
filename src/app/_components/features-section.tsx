@@ -149,7 +149,7 @@ export function FeaturesSection() {
             Six Systems That Do the Design Thinking for You
           </h2>
           <p className="body-large mx-auto max-w-2xl">
-            Stop Googling "perfect button shadow" at 2am. Each system encodes years of design
+            Stop Googling &quot;perfect button shadow&quot; at 2am. Each system encodes years of design
             expertise—just tell Claude what you need, and Métis applies the right principles automatically.
           </p>
         </motion.div>

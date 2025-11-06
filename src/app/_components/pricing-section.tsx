@@ -9,10 +9,11 @@ export function PricingSection() {
                 {/* Section Header */}
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="heading-2 text-balance">
-                        Professional Design Tools for Claude
+                        Less Than One Coffee Per Month
                     </h2>
                     <p className="body-large mt-4">
-                        Transform your UI workflow with master-level design systems. Start free, upgrade when you&apos;re ready.
+                        Stop spending hours on design decisions. Métis pays for itself in the first week. Start free,
+                        upgrade when you&apos;re shipping daily.
                     </p>
                 </div>
 
@@ -25,7 +26,7 @@ export function PricingSection() {
                             <div className="pb-12 text-center md:pb-0 md:pr-12">
                                 <h3 className="heading-3">Pro</h3>
                                 <p className="body-regular mt-2">
-                                    For professionals building production UIs
+                                    For developers shipping daily
                                 </p>
                                 <span className="mb-6 mt-12 inline-block text-6xl font-bold">
                                     <span className="text-4xl">$</span>5
@@ -43,10 +44,10 @@ export function PricingSection() {
                                 </div>
 
                                 <p className="text-muted-foreground mt-12 text-sm">
-                                    2,000 cycles per day • All 6 design tools • Priority support
+                                    2,000 cycles/day • All 6 systems • Priority support
                                 </p>
                                 <p className="text-muted-foreground/60 mt-2 text-xs">
-                                    * Free tier available with 50 cycles/day limit
+                                    * Free tier: 50 cycles/day. Perfect for side projects.
                                 </p>
                             </div>
 
@@ -56,12 +57,12 @@ export function PricingSection() {
                                     role="list"
                                     className="space-y-4">
                                     {[
-                                        'Typography System - Perfect type scales & hierarchies',
-                                        'Color System - HSL/OKLCH palettes with semantic variables',
-                                        'Depth & Shadows - Dual-shadow elevation system',
-                                        'Layout & Spacing - Systematic spacing scales',
-                                        'Theme Engine - Seamless light/dark mode switching',
-                                        'Accessibility Checker - WCAG AA compliance built-in'
+                                        'Typography System - Never eyeball font sizes again',
+                                        'Color System - Generate full palettes from one hue',
+                                        'Depth & Shadows - Realistic depth, not muddy blur',
+                                        'Layout & Spacing - End margin chaos with 4px scales',
+                                        'Theme Engine - Dark mode that actually looks good',
+                                        'Accessibility - Auto WCAG AA validation'
                                     ].map((item, index) => (
                                         <li
                                             key={index}
@@ -73,7 +74,7 @@ export function PricingSection() {
                                 </ul>
 
                                 <p className="text-muted-foreground mt-6 text-sm">
-                                    Works seamlessly with Claude through the Model Context Protocol. Trusted by developers building with:
+                                    Integrates with Claude through the Model Context Protocol. Used by developers at:
                                 </p>
 
                                 {/* Companies/Tools Logos */}

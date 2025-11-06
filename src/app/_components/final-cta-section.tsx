@@ -50,7 +50,7 @@ export function FinalCTASection() {
             className="heading-2 mb-6 tracking-tight"
             style={{ color: 'white' }}
           >
-            Stop Fighting Design Systems
+            Build UI Like You Have a Design Team
           </motion.h2>
 
           {/* Subheadline */}
@@ -60,9 +60,9 @@ export function FinalCTASection() {
             className="body-large mb-10"
             style={{ color: 'rgba(255, 255, 255, 0.95)' }}
           >
-            Install Metis once and transform every UI conversation with Claude. Get
-            professional typography, perfect color contrast, realistic depth, and
-            full accessibility—just by describing what you want in chat.
+            90 seconds to install. Then every conversation with Claude becomes a design sprint.
+            Professional typography, WCAG AA contrast, realistic depth, theme support—applied
+            automatically. Stop guessing. Start shipping interfaces that look intentional.
           </motion.p>
 
           {/* CTAs */}
@@ -126,15 +126,15 @@ export function FinalCTASection() {
           >
             <div className="flex items-center gap-2">
               <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
-              <span>6 Design Tools</span>
+              <span>6 Design Systems</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
-              <span>No Code Required</span>
+              <span>90s Setup</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
-              <span>Works Through Chat</span>
+              <span>Production Ready</span>
             </div>
           </motion.div>
         </motion.div>

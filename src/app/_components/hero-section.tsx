@@ -58,7 +58,7 @@ export function HeroSection() {
           <motion.div variants={fadeInUp} className="mb-6 flex justify-center lg:justify-start">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-1.5 text-sm backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-blue-600" />
-              <span className="font-medium">Master-Level Design • Powered by Claude</span>
+              <span className="font-medium">Design Systems • Zero Learning Curve</span>
             </div>
           </motion.div>
 
@@ -70,9 +70,9 @@ export function HeroSection() {
               lineHeight: "var(--leading-tight)",
             }}
           >
-            Transform Flat UIs into{" "}
+            Ship Designer-Quality UIs{" "}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent animate-pulse">
-              Living Designs
+              Without the Designer
             </span>
           </motion.h1>
 
@@ -84,9 +84,9 @@ export function HeroSection() {
               lineHeight: "var(--leading-relaxed)",
             }}
           >
-            Metis brings professional design systems to Claude through chat. Six powerful
-            tools transform your interfaces with perfect typography, depth, color, and
-            accessibility—no design degree required.
+            Métis gives Claude six professional design systems. Just describe your UI in chat—get
+            pixel-perfect typography, accessible color palettes, depth that pops, and WCAG AA
+            compliance. Every component, production-ready.
           </motion.p>
 
           {/* CTA Buttons with enhanced styling */}
@@ -134,13 +134,13 @@ export function HeroSection() {
           >
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-              <span>6 Design Tools</span>
+              <span>6 Design Systems</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-foreground">Chat-Driven</span>
+              <span className="font-semibold text-foreground">Works in Chat</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-foreground">No Code Required</span>
+              <span className="font-semibold text-foreground">5 min setup</span>
             </div>
           </motion.div>
         </motion.div>

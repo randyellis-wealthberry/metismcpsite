@@ -12,9 +12,9 @@ import {
 const steps = [
   {
     step: 1,
-    title: "Install Metis MCP",
+    title: "One Config Entry",
     description:
-      "Add Metis to Claude Desktop with a simple config entry. No code changes needed—it works through chat.",
+      "Paste three lines into Claude Desktop's config. No npm install, no dependencies in your project, no setup docs to read. Takes 90 seconds.",
     code: `// claude_desktop_config.json
 {
   "mcpServers": {
@@ -27,9 +27,9 @@ const steps = [
   },
   {
     step: 2,
-    title: "Chat with Claude",
+    title: "Describe What You Need",
     description:
-      "Describe what you want in natural language. Claude uses Metis's design tools to transform your UI instantly.",
+      "Talk to Claude like a designer who codes. Say \"make this card pop\" or \"fix the typography hierarchy.\" No design jargon required—Métis translates intent into implementation.",
     code: `You: "Create a dashboard card with proper depth and typography"
 
 Claude: "I'll create a professional dashboard card using:
@@ -42,9 +42,9 @@ Here's the component..."`,
   },
   {
     step: 3,
-    title: "Get Production Code",
+    title: "Ship Production-Ready Code",
     description:
-      "Receive polished, accessible components with design tokens, theme support, and professional styling—ready to ship.",
+      "Get components with real design tokens, theme support, and accessibility baked in. Not demo code—actual production code you can commit without shame.",
     code: `<div className="
   bg-bg-surface shadow-md
   rounded-xl p-6
@@ -91,7 +91,7 @@ export function HowItWorksSection() {
               color: 'var(--text-primary)'
             }}
           >
-            How Metis Works
+            Three Steps to Designer-Quality UI
           </h2>
           <p
             className="mx-auto max-w-2xl text-lg"
@@ -100,8 +100,8 @@ export function HowItWorksSection() {
               color: 'var(--text-body)'
             }}
           >
-            Install once, design forever through chat. Metis gives Claude master-level
-            design capabilities—no training or documentation reading required.
+            Five-minute setup, zero learning curve. After that, every conversation with Claude becomes
+            a design session—just describe what you need and watch professional UI appear.
           </p>
         </div>
 

@@ -33,14 +33,15 @@ export function TestimonialsSection() {
         {/* Main heading */}
         <div className="relative z-10 max-w-2xl space-y-6">
           <h2 className="heading-2">
-            Why Designers & Developers Love Metis
+            Stop Tweaking. Start Shipping.
           </h2>
           <p className="body-large">
-            Stop wrestling with design systems.{" "}
+            Frontend developers waste hours on{" "}
             <span className="font-medium" style={{ color: 'var(--text-primary)' }}>
-              Metis applies professional design principles instantly
-            </span>{" "}
-            —perfect typography, accessible colors, realistic depth, and theme support. Just describe what you want in chat.
+              design decisions AI should handle
+            </span>
+            —font sizing, shadow depth, color contrast, spacing. Métis encodes those decisions
+            into Claude, so you can build features instead of bikeshedding button styles.
           </p>
         </div>
 
@@ -145,15 +146,15 @@ export function TestimonialsSection() {
         <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
           <div className="space-y-6">
             <p className="body-regular">
-              Professional design systems embedded in Claude through the Model Context Protocol.
-              No Figma skills required—just describe what you want.
+              Six design systems. Zero Figma files. Zero documentation to read.
+              Just chat with Claude and get production code that looks intentional.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="bg-gradient-to-r from-zinc-950 to-zinc-600 bg-clip-text text-5xl font-bold text-transparent dark:from-white dark:to-zinc-800">
-                  6
+                  90s
                 </div>
-                <p className="body-small">Design Tools</p>
+                <p className="body-small">Setup Time</p>
               </div>
               <div className="space-y-3">
                 <div className="bg-gradient-to-r from-zinc-950 to-zinc-600 bg-clip-text text-5xl font-bold text-transparent dark:from-white dark:to-zinc-800">
@@ -169,15 +170,14 @@ export function TestimonialsSection() {
               style={{ borderColor: 'var(--color-brand-primary)' }}
             >
               <p className="body-regular">
-                I used to spend hours tweaking shadows and colors. Now I just ask Claude
-                to &quot;make this card pop&quot; and Metis applies perfect depth, typography
-                hierarchy, and accessible contrast. Our design system went from inconsistent
-                to professional overnight.
+                Built an entire dashboard in one afternoon that actually looks good. Before Métis,
+                I'd spend 30 minutes picking shadow values for a single button. Now I just tell
+                Claude &quot;add depth to this&quot; and ship. Our designer stopped sending revision notes.
               </p>
 
               <div className="mt-6 space-y-3">
                 <cite className="block font-medium not-italic" style={{ color: 'var(--text-primary)' }}>
-                  Jordan Kim, Product Designer at Flux
+                  Alex Chen, Frontend Engineer
                 </cite>
                 <img
                   className="h-5 w-fit dark:invert"

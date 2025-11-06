@@ -578,7 +578,6 @@ function AIInput_Voice() {
 }
 
 const BentoCard = ({ item }: { item: BentoItem }) => {
-    const [_isHovered, setIsHovered] = useState(false);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const rotateX = useTransform(y, [-100, 100], [2, -2]);
@@ -599,7 +598,6 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
     function handleMouseLeave() {
         x.set(0);
         y.set(0);
-        setIsHovered(false);
     }
 
     return (
@@ -608,7 +606,6 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="h-full"
-            onHoverStart={() => setIsHovered(true)}
             onHoverEnd={handleMouseLeave}
             onMouseMove={handleMouseMove}
             style={{

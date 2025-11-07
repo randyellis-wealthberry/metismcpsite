@@ -52,8 +52,9 @@ const MCPServerCard = ({ name, description, stars, logo }: MCPServerProps) => {
           className="border-0.75 relative flex h-full flex-col justify-between gap-4 overflow-hidden p-5"
           style={{
             borderRadius: 'var(--radius-xl)',
-            boxShadow: 'var(--shadow-sm)',
-            backgroundColor: 'var(--bg-surface)'
+            boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.05), var(--shadow-sm)',
+            backgroundColor: 'var(--bg-surface)',
+            backgroundImage: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent 50%)'
           }}
         >
           <div className="relative flex flex-col gap-3">
@@ -73,7 +74,8 @@ const MCPServerCard = ({ name, description, stars, logo }: MCPServerProps) => {
                   style={{
                     borderRadius: 'var(--radius-lg)',
                     borderColor: 'var(--border-default)',
-                    backgroundColor: 'var(--bg-muted)'
+                    backgroundColor: 'var(--bg-muted)',
+                    boxShadow: 'inset 0 1px 1px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05)'
                   }}
                 >
                   <div className="h-4 w-4 rounded bg-gradient-to-br from-blue-500 to-cyan-500" />

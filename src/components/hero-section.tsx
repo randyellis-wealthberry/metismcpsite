@@ -72,20 +72,13 @@ export default function HeroSection() {
                                         <Button
                                             asChild
                                             size="lg"
-                                            className="h-12 pl-5 pr-3 text-base transition-all duration-300 group"
+                                            className="h-12 pl-5 pr-3 text-base transition-all duration-300 group depth-glow-brand hover:translate-y-[-3px] hover:scale-[1.03]"
                                             style={{
                                                 borderRadius: 'var(--radius-full)',
-                                                boxShadow: 'var(--shadow-lg)'
+                                                background: 'linear-gradient(135deg, hsl(220, 80%, 55%), hsl(180, 80%, 55%))'
                                             }}
-                                            onMouseEnter={(e) => {
-                                                e.currentTarget.style.boxShadow = 'var(--shadow-xl)';
-                                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
-                                                e.currentTarget.style.transform = 'translateY(0)';
-                                            }}>
-                                            <Link href="#get-started">
+                                        >
+                                            <Link href="#get-started" className="inline-flex items-center justify-center">
                                                 <span className="text-nowrap">Get Started</span>
                                                 <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                             </Link>

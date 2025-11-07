@@ -19,7 +19,17 @@ export function PricingSection() {
 
                 {/* Pricing Card */}
                 <div className="mt-8 md:mt-20">
-                    <div className="bg-card relative rounded-3xl border shadow-2xl shadow-zinc-950/5">
+                    <div
+                        className="bg-card relative rounded-3xl border shadow-2xl shadow-zinc-950/5"
+                        style={{
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 25px rgba(0, 0, 0, 0.1), 0 20px 50px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                            borderColor: 'var(--border-default)',
+                            backgroundImage: 'linear-gradient(to bottom, var(--bg-surface), var(--bg-elevated))'
+                        }}
+                    >
+                        {/* Depth divider between columns */}
+                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border-default to-transparent md:block hidden" />
+
                         <div className="grid items-center gap-12 divide-y p-12 md:grid-cols-2 md:divide-x md:divide-y-0">
 
                             {/* Left Column - Pricing */}
@@ -36,10 +46,9 @@ export function PricingSection() {
                                     <Button
                                         asChild
                                         size="lg"
-                                        className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
-                                        style={{ boxShadow: 'var(--shadow-lg)' }}
+                                        className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 depth-glow-brand"
                                     >
-                                        <Link href="#">Upgrade to Pro</Link>
+                                        <Link href="#" className="inline-flex items-center justify-center">Upgrade to Pro</Link>
                                     </Button>
                                 </div>
 

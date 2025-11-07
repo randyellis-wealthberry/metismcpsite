@@ -58,7 +58,8 @@ export function MechanicalDiagram({ className }: MechanicalDiagramProps) {
   const colors = theme === 'dark' ? COLORS.dark : COLORS.light;
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
 
     // Check WebGL availability
     if (!isWebGLAvailable()) {
@@ -76,14 +77,14 @@ export function MechanicalDiagram({ className }: MechanicalDiagramProps) {
       sceneRef.current = scene;
 
       // Setup camera
-      const aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
+      const aspect = container.clientWidth / container.clientHeight;
       const camera = setupIsometricCamera(aspect, [10, 10, 10]);
       cameraRef.current = camera;
 
       // Setup renderer
       const renderer = createRenderer(true, true);
-      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-      containerRef.current.appendChild(renderer.domElement);
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      container.appendChild(renderer.domElement);
       rendererRef.current = renderer;
 
       // Setup lighting
@@ -152,7 +153,7 @@ export function MechanicalDiagram({ className }: MechanicalDiagramProps) {
       animateScene();
 
       // Setup resize handler
-      const handleResize = createResizeHandler(camera, renderer, containerRef.current);
+      const handleResize = createResizeHandler(camera, renderer, container);
       window.addEventListener('resize', handleResize);
 
       // Start animations if reduced motion is not preferred
@@ -228,8 +229,8 @@ export function MechanicalDiagram({ className }: MechanicalDiagramProps) {
         // Dispose renderer
         if (renderer) {
           renderer.dispose();
-          if (containerRef.current && renderer.domElement.parentNode) {
-            containerRef.current.removeChild(renderer.domElement);
+          if (container && renderer.domElement.parentNode) {
+            container.removeChild(renderer.domElement);
           }
         }
       };
@@ -237,7 +238,9 @@ export function MechanicalDiagram({ className }: MechanicalDiagramProps) {
       console.error('MechanicalDiagram initialization error:', err);
       setError(err instanceof Error ? err.message : 'Failed to initialize 3D diagram');
     }
-  }, []); // Only run once on mount
+    // Only run once on mount - color updates are handled by a separate effect below
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Update colors when theme changes
   useEffect(() => {

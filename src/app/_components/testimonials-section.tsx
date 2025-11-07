@@ -2,6 +2,7 @@
 
 import { Clock, Zap, Settings, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const benefits = [
   {
@@ -38,7 +39,7 @@ export function TestimonialsSection() {
           <p className="body-large">
             Stop wrestling with design systems.{" "}
             <span className="font-medium" style={{ color: 'var(--text-primary)' }}>
-              Metis applies professional design principles instantly
+              Metis delivers UI design automation with professional design principles instantly
             </span>{" "}
             —perfect typography, accessible colors, realistic depth, and theme support. Just describe what you want in chat.
           </p>
@@ -146,7 +147,7 @@ export function TestimonialsSection() {
           <div className="space-y-6">
             <p className="body-regular">
               Professional design systems embedded in Claude through the Model Context Protocol.
-              No Figma skills required—just describe what you want.
+              Claude design tools with no Figma skills required—just describe what you want.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-3">
@@ -179,12 +180,12 @@ export function TestimonialsSection() {
                 <cite className="block font-medium not-italic" style={{ color: 'var(--text-primary)' }}>
                   Jordan Kim, Product Designer at Flux
                 </cite>
-                <img
+                <Image
                   className="h-5 w-fit dark:invert"
                   src="https://html.tailus.io/blocks/customers/openai.svg"
-                  alt="Company Logo"
-                  height="20"
-                  width="auto"
+                  alt="Flux - Design automation company using Claude tools"
+                  height={20}
+                  width={80}
                 />
               </div>
             </blockquote>

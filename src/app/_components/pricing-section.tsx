@@ -1,18 +1,19 @@
 import { Button } from '~/components/ui/button'
 import { Check } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function PricingSection() {
     return (
-        <div className="relative py-16 md:py-32">
+        <div id="pricing" className="relative py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 {/* Section Header */}
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="heading-2 text-balance">
-                        Professional Design Tools for Claude
+                        Professional MCP Design System for Claude
                     </h2>
                     <p className="body-large mt-4">
-                        Transform your UI workflow with master-level design systems. Start free, upgrade when you&apos;re ready.
+                        Transform your UI workflow with master-level design tools through the Model Context Protocol. Start free, upgrade when you&apos;re ready.
                     </p>
                 </div>
 
@@ -78,33 +79,33 @@ export function PricingSection() {
 
                                 {/* Companies/Tools Logos */}
                                 <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
-                                    <img
+                                    <Image
                                         className="h-5 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                        alt="Nvidia Logo"
-                                        height="20"
-                                        width="auto"
+                                        alt="Nvidia - AI development tools"
+                                        height={20}
+                                        width={80}
                                     />
-                                    <img
+                                    <Image
                                         className="h-4 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/github.svg"
-                                        alt="GitHub Logo"
-                                        height="16"
-                                        width="auto"
+                                        alt="GitHub - Version control and collaboration"
+                                        height={16}
+                                        width={64}
                                     />
-                                    <img
+                                    <Image
                                         className="h-6 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/openai.svg"
-                                        alt="OpenAI Logo"
-                                        height="24"
-                                        width="auto"
+                                        alt="OpenAI - Claude AI assistant integration"
+                                        height={24}
+                                        width={96}
                                     />
-                                    <img
+                                    <Image
                                         className="h-5 w-fit dark:invert"
                                         src="https://html.tailus.io/blocks/customers/nike.svg"
-                                        alt="Nike Logo"
-                                        height="20"
-                                        width="auto"
+                                        alt="Nike - Enterprise design systems"
+                                        height={20}
+                                        width={80}
                                     />
                                 </div>
                             </div>

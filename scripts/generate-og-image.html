@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate OG Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #111;
+            color: #fff;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        #canvas {
+            border: 2px solid #333;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button onclick="generateOGImage()">Generate OG Image (1200x630)</button>
+        <button onclick="generateTwitterImage()">Generate Twitter Card (1200x600)</button>
+        <button onclick="downloadImage('og')">Download OG Image</button>
+        <button onclick="downloadImage('twitter')">Download Twitter Image</button>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let currentType = 'og';
+
+        function generateOGImage() {
+            currentType = 'og';
+            canvas.width = 1200;
+            canvas.height = 630;
+            drawImage();
+        }
+
+        function generateTwitterImage() {
+            currentType = 'twitter';
+            canvas.width = 1200;
+            canvas.height = 600;
+            drawImage();
+        }
+
+        function drawImage() {
+            const width = canvas.width;
+            const height = canvas.height;
+
+            // Background gradient - dark blue to purple
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, '#0f172a');
+            gradient.addColorStop(0.5, '#1e1b4b');
+            gradient.addColorStop(1, '#312e81');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Add noise texture effect
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
+            for (let i = 0; i < 2000; i++) {
+                const x = Math.random() * width;
+                const y = Math.random() * height;
+                ctx.fillRect(x, y, 1, 1);
+            }
+
+            // Glowing orbs in background
+            const orb1 = ctx.createRadialGradient(200, 150, 0, 200, 150, 300);
+            orb1.addColorStop(0, 'rgba(99, 102, 241, 0.4)');
+            orb1.addColorStop(1, 'rgba(99, 102, 241, 0)');
+            ctx.fillStyle = orb1;
+            ctx.fillRect(0, 0, width, height);
+
+            const orb2 = ctx.createRadialGradient(width - 200, height - 150, 0, width - 200, height - 150, 300);
+            orb2.addColorStop(0, 'rgba(139, 92, 246, 0.4)');
+            orb2.addColorStop(1, 'rgba(139, 92, 246, 0)');
+            ctx.fillStyle = orb2;
+            ctx.fillRect(0, 0, width, height);
+
+            // Main content area
+            const padding = 80;
+            const contentWidth = width - (padding * 2);
+
+            // Metis logo/wordmark
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 72px system-ui, -apple-system, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('METIS', padding, 140);
+
+            // Tagline
+            ctx.fillStyle = '#a5b4fc';
+            ctx.font = '32px system-ui, -apple-system, sans-serif';
+            ctx.fillText('Design Tools for Claude', padding, 190);
+
+            // Value proposition
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 48px system-ui, -apple-system, sans-serif';
+            const line1 = 'Professional Design Systems';
+            const line2 = 'via Model Context Protocol';
+            ctx.fillText(line1, padding, 290);
+            ctx.fillText(line2, padding, 350);
+
+            // 6 Design Tools Grid
+            const toolsStartY = 420;
+            const toolSpacing = 160;
+            const iconSize = 40;
+            const tools = [
+                { name: 'Typography', icon: 'T' },
+                { name: 'Color', icon: 'C' },
+                { name: 'Depth', icon: 'D' },
+                { name: 'Layout', icon: 'L' },
+                { name: 'Theme', icon: 'Th' },
+                { name: 'A11y', icon: 'A' }
+            ];
+
+            tools.forEach((tool, index) => {
+                const x = padding + (index * toolSpacing);
+                const y = toolsStartY;
+
+                // Tool icon background
+                ctx.fillStyle = 'rgba(99, 102, 241, 0.2)';
+                ctx.fillRect(x, y, iconSize, iconSize);
+
+                // Tool icon border
+                ctx.strokeStyle = '#6366f1';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, iconSize, iconSize);
+
+                // Tool icon letter
+                ctx.fillStyle = '#a5b4fc';
+                ctx.font = 'bold 20px system-ui, -apple-system, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(tool.icon, x + iconSize/2, y + iconSize/2 + 7);
+
+                // Tool name
+                ctx.fillStyle = '#cbd5e1';
+                ctx.font = '16px system-ui, -apple-system, sans-serif';
+                ctx.fillText(tool.name, x + iconSize/2, y + iconSize + 24);
+            });
+
+            // Footer badge
+            const badgeY = height - 80;
+            ctx.fillStyle = 'rgba(34, 197, 94, 0.15)';
+            ctx.fillRect(padding, badgeY, 200, 40);
+            ctx.strokeStyle = '#22c55e';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(padding, badgeY, 200, 40);
+
+            ctx.fillStyle = '#22c55e';
+            ctx.font = 'bold 18px system-ui, -apple-system, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('FREE TIER', padding + 100, badgeY + 26);
+
+            // Pricing tag
+            ctx.textAlign = 'right';
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '20px system-ui, -apple-system, sans-serif';
+            ctx.fillText('Free 50 cycles/day  •  Pro $5/mo', width - padding, badgeY + 20);
+
+            // URL at bottom
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#64748b';
+            ctx.font = '18px system-ui, -apple-system, sans-serif';
+            ctx.fillText('metis-mcp.dev', width/2, height - 30);
+        }
+
+        function downloadImage(type) {
+            const link = document.createElement('a');
+            link.download = type === 'og' ? 'og-image.png' : 'twitter-image.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Generate OG image on load
+        generateOGImage();
+    </script>
+</body>
+</html>

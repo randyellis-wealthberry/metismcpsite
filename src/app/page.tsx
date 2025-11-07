@@ -1,6 +1,8 @@
 import HeroSection from "~/components/hero-section";
 import { DottedGlowSection } from "~/app/_components/dotted-glow-section";
 import { FeaturesSection } from "~/app/_components/features-section";
+import { CompatibleMCPServersSection } from "~/app/_components/compatible-mcp-servers-section";
+import { AgenticToolsSection } from "~/app/_components/agentic-tools-section";
 import { CodeDemoSection } from "~/app/_components/code-demo-section";
 import { HowItWorksSection } from "~/app/_components/how-it-works-section";
 import { PricingSection } from "~/app/_components/pricing-section";
@@ -20,6 +22,8 @@ export default function Home() {
 
       <main className="min-h-screen smooth-scroll">
         <FeaturesSection />
+        <CompatibleMCPServersSection />
+        <AgenticToolsSection />
         <CodeDemoSection />
         <HowItWorksSection />
         <PricingSection />

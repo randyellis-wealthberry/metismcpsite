@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to PNG Converter - Metis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #a5b4fc, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        button {
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(99, 102, 241, 0.3);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .preview {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        .preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .status {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            color: #86efac;
+            display: none;
+        }
+        .status.show {
+            display: block;
+        }
+        .instructions {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        .instructions h3 {
+            color: #93c5fd;
+            margin-bottom: 1rem;
+        }
+        .instructions ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+        .instructions code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Metis Image Generator</h1>
+        <p class="subtitle">Generate OG images, Twitter cards, and favicons for Metis Design Tools</p>
+
+        <div class="card">
+            <h2>OG Image & Twitter Card</h2>
+            <div class="button-grid">
+                <button onclick="convertAndDownload('og-image', 1200, 630)">Download OG Image (1200x630)</button>
+                <button onclick="convertAndDownload('twitter-image', 1200, 600)">Download Twitter Card (1200x600)</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Favicon Suite</h2>
+            <div class="button-grid">
+                <button onclick="convertAndDownload('icon', 512, 512, 'icon-512')">Download Icon 512x512</button>
+                <button onclick="convertAndDownload('icon', 192, 192, 'icon-192')">Download Icon 192x192</button>
+                <button onclick="convertAndDownload('icon', 180, 180, 'apple-touch-icon')">Download Apple Touch Icon</button>
+                <button onclick="convertAndDownload('icon', 32, 32, 'favicon-32x32')">Download Favicon 32x32</button>
+                <button onclick="convertAndDownload('icon', 16, 16, 'favicon-16x16')">Download Favicon 16x16</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Preview</h2>
+            <div class="preview" id="preview"></div>
+            <div class="status" id="status"></div>
+        </div>
+
+        <div class="instructions">
+            <h3>Instructions</h3>
+            <ol>
+                <li>Click the buttons above to download each image file</li>
+                <li>Save all downloaded files to the <code>public/</code> directory of your project</li>
+                <li>The manifest.json and layout.tsx will be updated automatically</li>
+                <li>Verify all images are properly saved before deploying</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        async function convertAndDownload(svgName, width, height, outputName) {
+            const status = document.getElementById('status');
+            const preview = document.getElementById('preview');
+
+            status.textContent = `Converting ${outputName || svgName}.png...`;
+            status.classList.add('show');
+
+            try {
+                // Load the SVG
+                const response = await fetch(`/${svgName}.svg`);
+                const svgText = await response.text();
+
+                // Create an image from the SVG
+                const img = new Image();
+                const svgBlob = new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(svgBlob);
+
+                img.onload = function() {
+                    // Create canvas
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+
+                    // Draw image on canvas
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Convert to PNG and download
+                    canvas.toBlob(function(blob) {
+                        const downloadUrl = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.download = `${outputName || svgName}.png`;
+                        link.href = downloadUrl;
+                        link.click();
+
+                        status.textContent = `✓ Downloaded ${outputName || svgName}.png (${width}x${height})`;
+
+                        // Show preview for larger images
+                        if (width >= 512) {
+                            const previewImg = document.createElement('img');
+                            previewImg.src = downloadUrl;
+                            previewImg.alt = `${outputName || svgName} preview`;
+                            preview.innerHTML = '';
+                            preview.appendChild(previewImg);
+                        }
+
+                        URL.revokeObjectURL(downloadUrl);
+                    }, 'image/png');
+
+                    URL.revokeObjectURL(url);
+                };
+
+                img.onerror = function() {
+                    status.textContent = `Error loading ${svgName}.svg. Make sure the SVG files are in the public directory.`;
+                };
+
+                img.src = url;
+            } catch (error) {
+                status.textContent = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

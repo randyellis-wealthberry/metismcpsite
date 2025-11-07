@@ -91,3 +91,14 @@ temp/
 
 # snapshots (optional - uncomment if you don't want to commit)
 # .snapshots/
+
+# SEO & Analytics
+lighthouse-reports/
+*.lighthouse.json
+pagespeed-insights/
+seo-audit/
+screaming-frog/
+.vercel/analytics/
+
+# Sitemap generation cache
+.next/cache/sitemap/

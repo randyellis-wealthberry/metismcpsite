@@ -20,7 +20,7 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (
-    <li className={`min-h-[14rem] list-none ${area}`}>
+    <li className={`list-none ${area}`}>
       <div
         className="relative h-full border p-2 md:p-3 transition-all duration-300 group"
         style={{
@@ -55,14 +55,14 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
           }}
         />
         <div
-          className="border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden p-6 md:p-6"
+          className="border-0.75 relative flex h-full flex-col gap-6 overflow-hidden p-6 md:p-8"
           style={{
             borderRadius: 'var(--radius-xl)',
             boxShadow: 'var(--shadow-sm)',
             backgroundColor: 'var(--bg-surface)'
           }}
         >
-          <div className="relative flex flex-1 flex-col justify-between gap-3">
+          <div className="relative flex flex-col gap-4">
             <div
               className="w-fit border p-2"
               style={{
